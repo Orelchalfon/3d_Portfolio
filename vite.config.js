@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 // https://vitejs.dev/config/
 export default defineConfig({
 
-  base:"/3d_portfolio/",
+  base:"/3d-portfolio/",
   plugins: [react()],
   assetsInclude: ['**/*.glb'],
 });
