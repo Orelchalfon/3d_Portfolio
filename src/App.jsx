@@ -1,27 +1,25 @@
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MainNavbar from './Components/Navigation/MainNavbar';
 import { About, Contact, Home, Projects } from './Pages';
 const App = () => {
   return (
-    <>
-      nav
-      <main
-        className="
-    
-        flex h-svh min-h-svh
-        items-center
-        justify-center
-        bg-black-500 text-white
-    
+    <main
+      className="
+        bg-gradient-to-b from-gray-100 to-gray-200
         "
-      >
-        <Routes initial>
-          <Route index path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
+    >
+      <BrowserRouter>
+        <MainNavbar />
+        <Routes>
+          <Route path="/3d-portfolio/">
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="projects" element={<Projects />} />
+          </Route>
         </Routes>
-      </main>
-    </>
+      </BrowserRouter>
+    </main>
   );
 };
 
